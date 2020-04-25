@@ -13219,8 +13219,8 @@
     },
     "Common/1.0.0": {
       "type": "project",
-      "path": "../Common/Common.csproj",
-      "msbuildProject": "../Common/Common.csproj"
+      "path": "../../Common/Common.csproj",
+      "msbuildProject": "../../Common/Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13238,11 +13238,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/KanbanManagement.API.csproj",
+      "projectUniqueName": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement/KanbanManagement.API/KanbanManagement.API.csproj",
       "projectName": "KanbanManagement.API",
-      "projectPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/KanbanManagement.API.csproj",
+      "projectPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement/KanbanManagement.API/KanbanManagement.API.csproj",
       "packagesPath": "/home/covilo/.nuget/packages/",
-      "outputPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/",
+      "outputPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement/KanbanManagement.API/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

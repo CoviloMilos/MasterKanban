@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/KanbanManagement.API.csproj": {}
+    "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement/KanbanManagement.API/KanbanManagement.API.csproj": {}
   },
   "projects": {
     "/home/covilo/workspace/projects/diplomski/masterkanban/src/Common/Common.csproj": {
@@ -110,14 +110,14 @@
         }
       }
     },
-    "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/KanbanManagement.API.csproj": {
+    "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement/KanbanManagement.API/KanbanManagement.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/KanbanManagement.API.csproj",
+        "projectUniqueName": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement/KanbanManagement.API/KanbanManagement.API.csproj",
         "projectName": "KanbanManagement.API",
-        "projectPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/KanbanManagement.API.csproj",
+        "projectPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement/KanbanManagement.API/KanbanManagement.API.csproj",
         "packagesPath": "/home/covilo/.nuget/packages/",
-        "outputPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/",
+        "outputPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement/KanbanManagement.API/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
