@@ -12,7 +12,7 @@ namespace KanbanManagement.API.Controllers
     {
         private IProjectService _projectService;
 
-        public ProjectController(IProjectService projectService, ILoggerManager logger)
+        public ProjectController(IProjectService projectService)
         {
             _projectService = projectService;
         }
