@@ -1,0 +1,4 @@
+dotnet add KanbanManagement/KanbanManagement.csproj reference Common/Common.csproj
+dotnet new sln
+dotnet sln add KanbanManagement/KanbanManagement.csproj
+dotnet restore in directory where sln is will download dependencies for all registered projects

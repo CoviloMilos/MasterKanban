@@ -1,0 +1,9 @@
+/home/covilo/workspace/projects/diplomski/masterkanban/src/Common/bin/Debug/netstandard2.0/Common.deps.json
+/home/covilo/workspace/projects/diplomski/masterkanban/src/Common/bin/Debug/netstandard2.0/Common.dll
+/home/covilo/workspace/projects/diplomski/masterkanban/src/Common/bin/Debug/netstandard2.0/Common.pdb
+/home/covilo/workspace/projects/diplomski/masterkanban/src/Common/obj/Debug/netstandard2.0/Common.csprojAssemblyReference.cache
+/home/covilo/workspace/projects/diplomski/masterkanban/src/Common/obj/Debug/netstandard2.0/Common.csproj.CoreCompileInputs.cache
+/home/covilo/workspace/projects/diplomski/masterkanban/src/Common/obj/Debug/netstandard2.0/Common.AssemblyInfoInputs.cache
+/home/covilo/workspace/projects/diplomski/masterkanban/src/Common/obj/Debug/netstandard2.0/Common.AssemblyInfo.cs
+/home/covilo/workspace/projects/diplomski/masterkanban/src/Common/obj/Debug/netstandard2.0/Common.dll
+/home/covilo/workspace/projects/diplomski/masterkanban/src/Common/obj/Debug/netstandard2.0/Common.pdb

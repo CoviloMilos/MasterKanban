@@ -1,0 +1,17 @@
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/bin/Debug/netcoreapp2.2/KanbanManagement.API.deps.json
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/bin/Debug/netcoreapp2.2/KanbanManagement.API.runtimeconfig.json
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/bin/Debug/netcoreapp2.2/KanbanManagement.API.runtimeconfig.dev.json
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/bin/Debug/netcoreapp2.2/KanbanManagement.API.dll
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/bin/Debug/netcoreapp2.2/KanbanManagement.API.pdb
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/Debug/netcoreapp2.2/KanbanManagement.API.csprojAssemblyReference.cache
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/Debug/netcoreapp2.2/KanbanManagement.API.csproj.CoreCompileInputs.cache
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/Debug/netcoreapp2.2/KanbanManagement.API.RazorAssemblyInfo.cache
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/Debug/netcoreapp2.2/KanbanManagement.API.RazorAssemblyInfo.cs
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/Debug/netcoreapp2.2/KanbanManagement.API.AssemblyInfoInputs.cache
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/Debug/netcoreapp2.2/KanbanManagement.API.AssemblyInfo.cs
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/Debug/netcoreapp2.2/KanbanManagement.API.RazorTargetAssemblyInfo.cache
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/Debug/netcoreapp2.2/KanbanManagement.API.dll
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/Debug/netcoreapp2.2/KanbanManagement.API.pdb
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/bin/Debug/netcoreapp2.2/Common.dll
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/bin/Debug/netcoreapp2.2/Common.pdb
+/home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanManagement.API/obj/Debug/netcoreapp2.2/KanbanManagement.API.csproj.CopyComplete
