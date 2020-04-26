@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "206cd730b4e8317b93d0b16e4fe5df9d8221717f"
+    "signature": "90160caf4586a1d8acdab207655e4e51e4fc45f2"
   },
   "compilationOptions": {},
   "targets": {
@@ -10,6 +10,7 @@
       "Common/1.0.0": {
         "dependencies": {
           "AspNetCore.HealthChecks.NpgSql": "2.2.0",
+          "AspNetCore.HealthChecks.Rabbitmq": "2.2.0",
           "AspNetCore.HealthChecks.UI": "2.2.34",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "4.0.1",
           "Microsoft.AspNetCore": "2.2.0",
@@ -36,6 +37,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/HealthChecks.NpgSql.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        }
+      },
+      "AspNetCore.HealthChecks.Rabbitmq/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "2.2.0",
+          "RabbitMQ.Client": "6.0.0-rc1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/HealthChecks.RabbitMQ.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.0.0"
           }
@@ -2017,6 +2030,13 @@
       "sha512": "sha512-X1hOkEs5aKqUk75TNw1NqX2K66hbKtDWZyo57Uo3jMBo5sGVLGz0//UMOEvHryUS4GucLUu0Xpmc2N4aAPdSuQ==",
       "path": "aspnetcore.healthchecks.npgsql/2.2.0",
       "hashPath": "aspnetcore.healthchecks.npgsql.2.2.0.nupkg.sha512"
+    },
+    "AspNetCore.HealthChecks.Rabbitmq/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-09r9u5TfPblS2Z1oSSca3RV2CoqxCQys6+bQXkC8QIm5AflJh064OSEHMswnYdBQImezhTT76JL4Xskql4TLKg==",
+      "path": "aspnetcore.healthchecks.rabbitmq/2.2.0",
+      "hashPath": "aspnetcore.healthchecks.rabbitmq.2.2.0.nupkg.sha512"
     },
     "AspNetCore.HealthChecks.UI/2.2.34": {
       "type": "package",

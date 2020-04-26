@@ -1,7 +1,10 @@
 using System;
+using Common.DistribudetExcetionHandling;
 using Common.ExceptionHanding.Exceptions;
 using KanbanManagement.API.Consts;
 using KanbanManagement.API.Model;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace KanbanManagement.API.Shared
 {
@@ -50,6 +53,11 @@ namespace KanbanManagement.API.Shared
             { 
                 throw new BadRequestException("Invaid request. Could not process id.", DomainConsts.APPLICATION_NAME);
             }
+        }
+
+        public static string extractRabbitMqConfigDataToString(RabbitMqOptions rabbitOpt) 
+        {
+            return $"amqp://{rabbitOpt.UserName}:{rabbitOpt.Password}@{rabbitOpt.HostName}:{rabbitOpt.Port}{rabbitOpt.VHost}";
         }
     }
 }

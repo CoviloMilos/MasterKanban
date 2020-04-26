@@ -6,3 +6,18 @@
 2020-04-26 14:56:15.6055 INFO Retrieving project with id: 89338ae9-3b56-478e-a360-8b2bd2d54842
 2020-04-26 14:56:26.1368 INFO Retrieving all existing assignments from database ...
 2020-04-26 14:59:51.6912 INFO Retrieving all existing assignments from database ...
+2020-04-26 16:48:19.1538 INFO Creating connection to RabbitMQ
+2020-04-26 16:49:19.1047 INFO Publishing message to RabbitMQ
+2020-04-26 16:51:57.5558 INFO Creating connection to RabbitMQ
+2020-04-26 16:53:57.0897 INFO Creating connection to RabbitMQ
+2020-04-26 17:01:22.4526 INFO Creating connection to RabbitMQ
+2020-04-26 17:01:34.2579 INFO Publishing message to RabbitMQ
+2020-04-26 17:02:04.8686 INFO Publishing message to RabbitMQ
+2020-04-26 17:06:03.0194 INFO Creating connection to RabbitMQ
+2020-04-26 17:06:13.6014 INFO Publishing message to RabbitMQ
+2020-04-26 17:06:17.1572 INFO Publishing message to RabbitMQ
+2020-04-26 17:21:54.8169 INFO Creating connection to RabbitMQ
+2020-04-26 17:23:04.7380 INFO Creating connection to RabbitMQ
+2020-04-26 17:24:10.4728 INFO Creating connection to RabbitMQ
+2020-04-26 17:55:22.2549 INFO Creating connection to RabbitMQ
+2020-04-26 18:16:16.2450 INFO Creating connection to RabbitMQ

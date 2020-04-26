@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Npgsql;
 
-namespace KanbanManagement.API.Shared.HealthCheck.Extension
+namespace KanbanManagement.API.Shared.HealthCheck
 {
     public class NpgsqlHealthCheck : IHealthCheck
     {

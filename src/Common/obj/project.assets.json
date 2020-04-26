@@ -15,6 +15,19 @@
           "lib/netstandard2.0/HealthChecks.NpgSql.dll": {}
         }
       },
+      "AspNetCore.HealthChecks.Rabbitmq/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "2.2.0",
+          "RabbitMQ.Client": "5.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/HealthChecks.RabbitMQ.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/HealthChecks.RabbitMQ.dll": {}
+        }
+      },
       "AspNetCore.HealthChecks.UI/2.2.34": {
         "type": "package",
         "dependencies": {
@@ -2338,6 +2351,18 @@
         "aspnetcore.healthchecks.npgsql.2.2.0.nupkg.sha512",
         "aspnetcore.healthchecks.npgsql.nuspec",
         "lib/netstandard2.0/HealthChecks.NpgSql.dll"
+      ]
+    },
+    "AspNetCore.HealthChecks.Rabbitmq/2.2.0": {
+      "sha512": "09r9u5TfPblS2Z1oSSca3RV2CoqxCQys6+bQXkC8QIm5AflJh064OSEHMswnYdBQImezhTT76JL4Xskql4TLKg==",
+      "type": "package",
+      "path": "aspnetcore.healthchecks.rabbitmq/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnetcore.healthchecks.rabbitmq.2.2.0.nupkg.sha512",
+        "aspnetcore.healthchecks.rabbitmq.nuspec",
+        "lib/netstandard2.0/HealthChecks.RabbitMQ.dll"
       ]
     },
     "AspNetCore.HealthChecks.UI/2.2.34": {
@@ -6781,6 +6806,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "AspNetCore.HealthChecks.NpgSql >= 2.2.0",
+      "AspNetCore.HealthChecks.Rabbitmq >= 2.2.0",
       "AspNetCore.HealthChecks.UI >= 2.2.34",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 4.0.1",
       "Microsoft.AspNetCore >= 2.2.0",
@@ -6837,6 +6863,10 @@
       "netstandard2.0": {
         "dependencies": {
           "AspNetCore.HealthChecks.NpgSql": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "AspNetCore.HealthChecks.Rabbitmq": {
             "target": "Package",
             "version": "[2.2.0, )"
           },

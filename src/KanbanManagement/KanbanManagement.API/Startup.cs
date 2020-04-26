@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.IO;
 using KanbanManagement.API.Repository;
 using Microsoft.AspNetCore.Builder;
@@ -18,7 +19,9 @@ using Common.Logging;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using HealthChecks.UI.Client;
 using HealthChecks.UI.Configuration;
-using KanbanManagement.API.Shared.HealthCheck.Extension;
+using KanbanManagement.API.Shared.HealthCheck;
+using Common.DistribudetExcetionHandling;
+using KanbanManagement.API.Shared;
 
 namespace KanbanManagement.API
 {
@@ -43,6 +46,8 @@ namespace KanbanManagement.API
                         Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
 
+            services.AddRabbitMq(Configuration);
+
             services.AddDbContext<DataContext>(opt => 
                 {
                     opt.UseNpgsql(Configuration.GetConnectionString("postgres-connection"));
@@ -55,8 +60,10 @@ namespace KanbanManagement.API
 
             // HealthCheck configuration
             services.AddHealthChecks()
-                //.AddNpgSql(Configuration.GetConnectionString("postgres-connection"));
-                .AddCheck("Kanban management Postgresql", new NpgsqlHealthCheck(Configuration.GetConnectionString("postgres-connection")));
+                .AddRabbitMQ(KanbanManagement.API.Shared.Utils
+                                .extractRabbitMqConfigDataToString(Configuration.GetSection("rabbitmq-connection").Get<RabbitMqOptions>()), 
+                             "Kanban management RabbitMq HC")
+                .AddCheck("Kanban management Postgresql HC", new NpgsqlHealthCheck(Configuration.GetConnectionString("postgres-connection")));
             services.AddHealthChecksUI();
 
             // AutoMapper configuration

@@ -43,6 +43,10 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "AspNetCore.HealthChecks.Rabbitmq": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "AspNetCore.HealthChecks.UI": {
               "target": "Package",
               "version": "[2.2.34, )"

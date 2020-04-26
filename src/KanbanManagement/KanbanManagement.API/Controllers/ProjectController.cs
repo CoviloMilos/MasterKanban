@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using Common.Logging;
 using KanbanManagement.API.Dto.Request;
 using KanbanManagement.API.Service;
 using Microsoft.AspNetCore.Mvc;
