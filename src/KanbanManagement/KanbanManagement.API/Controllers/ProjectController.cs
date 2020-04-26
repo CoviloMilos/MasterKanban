@@ -40,5 +40,11 @@ namespace KanbanManagement.API.Controllers
         {
             return Ok(await _projectService.DeleteById(projectId));
         }
+
+        [HttpPut("{projectId}", Name = "UpdateProjectById")]
+        public async Task<IActionResult> UpdateProjectById(UpdateProjectRequestDto updateProjectRequestDto, string projectId) 
+        {
+            return Ok(await _projectService.UpdateProject(updateProjectRequestDto, projectId));
+        }
     }
 }

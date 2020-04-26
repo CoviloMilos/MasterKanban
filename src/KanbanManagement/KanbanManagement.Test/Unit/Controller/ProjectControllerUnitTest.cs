@@ -9,6 +9,7 @@ using Xunit;
 using System.Collections.Generic;
 using Common.Dto;
 using KanbanManagement.API.Dto.Request;
+using KanbanManagement.API.Consts;
 
 namespace KanbanManagement.Test.Unit.Controller
 {
@@ -47,17 +48,17 @@ namespace KanbanManagement.Test.Unit.Controller
         }
 
         [Fact]
-        public async void DeleteProjectById_should_return_array_of_EntityDeletedSuccessfully_dto() 
+        public async void DeleteProjectById_should_return_EntityDeletedSuccessfully_dto() 
         {
             var result = await _controller.DeleteProjectById(Guid.NewGuid().ToString()) as OkObjectResult;
             var response = Assert.IsType<EntityDeletedSuccessfully>(result.Value);
 
-            Assert.Equal("Project", response.EntityType);
+            Assert.Equal(DomainConsts.ENTITY_PROJECT, response.EntityType);
             Assert.Equal(200, result.StatusCode);
         }
 
         [Fact]
-        public async void CreateProject_should_return_array_of_ProjectResponseDto_dto() 
+        public async void CreateProject_should_return_ProjectResponseDto_dto() 
         {
             CreateProjectRequestDto projectDto = new CreateProjectRequestDto();
             projectDto.Name = "Name";
@@ -69,6 +70,22 @@ namespace KanbanManagement.Test.Unit.Controller
 
             Assert.Equal("Name", project.Name);
             Assert.Equal("Description", project.Description);
+            Assert.Equal(200, result.StatusCode);
+        }
+
+        [Fact]
+        public async void UpdateProject_should_return_ProjectResponseDto_dto() 
+        {
+            UpdateProjectRequestDto projectDto = new UpdateProjectRequestDto();
+            projectDto.Name = "Name";
+            projectDto.Description = "Description";
+            projectDto.CreatedBy = Guid.Parse("ab2bd817-98cd-4cf3-a80a-53ea0cd9c100");
+
+            var result = await _controller.UpdateProjectById(projectDto, Guid.NewGuid().ToString()) as OkObjectResult;
+            var project = Assert.IsType<ProjectResponseDto>(result.Value);
+
+            Assert.Equal(projectDto.Name, project.Name);
+            Assert.Equal(projectDto.Description, project.Description);
             Assert.Equal(200, result.StatusCode);
         }
     }

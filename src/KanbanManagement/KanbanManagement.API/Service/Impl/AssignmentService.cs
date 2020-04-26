@@ -58,7 +58,7 @@ namespace KanbanManagement.API.Service.Impl
                 _assignmentRepository.Delete(assignment);
 
                 if (await _assignmentRepository.SaveAll()) 
-                    return new EntityDeletedSuccessfully(DomainConsts.ENTITY_ASSIGNMENT, $"Assignment with id: {guid} is deleted successfullty.", HttpStatusCode.OK);
+                    return new EntityDeletedSuccessfully(DomainConsts.ENTITY_ASSIGNMENT, $"{DomainConsts.ENTITY_ASSIGNMENT} with id: {guid} is deleted successfully.", HttpStatusCode.OK);
                 else 
                 {
                     _logger.LogError($"Something went wrong while trying to delete assignment with id: {guid}");
@@ -67,17 +67,17 @@ namespace KanbanManagement.API.Service.Impl
 
             }
             
-            throw new EntityNotFoundException($"Entity with id: {guid} not found.", DomainConsts.APPLICATION_NAME);
+            throw new EntityNotFoundException($"{DomainConsts.ENTITY_ASSIGNMENT} with id: {guid} not found.", DomainConsts.APPLICATION_NAME);
         }
 
-        public async Task<IEnumerable<AssignmentResponseDto>> RetrieveAll(string projectId)
+        public async Task<IEnumerable<AssignmentResponseDto>> RetrieveAll(string projectGuid)
         {
             _logger.LogInfo("Retrieving all existing assignments from database ...");
 
-            var assignments = await _assignmentRepository.FindAssignments(Utils.checkGuidFormat(projectId));
+            var assignments = await _assignmentRepository.FindAssignments(Utils.checkGuidFormat(projectGuid));
 
             if (assignments.Count() == 0) 
-                throw new EntityNotFoundException($"Entity with id: {projectId} not found.", DomainConsts.APPLICATION_NAME);
+                throw new EntityNotFoundException($"{DomainConsts.ENTITY_ASSIGNMENT} with id: {projectGuid} not found.", DomainConsts.APPLICATION_NAME);
 
             return _mapper.Map<IEnumerable<Assignment>, IEnumerable<AssignmentResponseDto>>(assignments);
         }
@@ -91,7 +91,27 @@ namespace KanbanManagement.API.Service.Impl
             if (assignment != null)
                 return _mapper.Map<AssignmentResponseDto>(assignment);
 
-            throw new EntityNotFoundException($"Entity with id: {guid} not found.", DomainConsts.APPLICATION_NAME);
+            throw new EntityNotFoundException($"{DomainConsts.ENTITY_ASSIGNMENT} with id: {guid} not found.", DomainConsts.APPLICATION_NAME);
+        }
+
+        public async Task<AssignmentResponseDto> UpdateAssignment(UpdateAssignmentRequestDto updateAssignmentRequestDto, string guid, string projectGuid)
+        {
+            var assignment = await _assignmentRepository.FindAssignmentById(Utils.checkGuidFormat(guid));
+
+            if (assignment != null) 
+            {
+                _mapper.Map(updateAssignmentRequestDto, assignment);
+                           
+                if (await _assignmentRepository.SaveAll()) 
+                    return _mapper.Map<AssignmentResponseDto>(assignment);
+                else 
+                {
+                    _logger.LogError("Something went wront while trying to update assignment ...");
+                    throw new UnknownException("Something went wront while trying to update assignment.", DomainConsts.APPLICATION_NAME);
+                }
+            }
+
+            throw new EntityNotFoundException($"{DomainConsts.ENTITY_ASSIGNMENT} with id: {guid} not found.", DomainConsts.APPLICATION_NAME);
         }
     }
 }

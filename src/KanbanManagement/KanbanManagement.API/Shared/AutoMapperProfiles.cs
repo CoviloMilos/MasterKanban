@@ -14,10 +14,12 @@ namespace KanbanManagement.API.Shared
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => Utils.convertStringToAssigmentStatusEnum(src.Status)));
             CreateMap<Assignment, AssignmentResponseDto>()
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => Utils.convertAssigmentStatusEnumToString(src.Status)));
-            
+            CreateMap<UpdateAssignmentRequestDto, Assignment>();
+
             CreateMap<CreateProjectRequestDto, Project>();
             CreateMap<Project, ProjectResponseDto>();
             CreateMap<Project, ProjectByIdResponseDto>();
+            CreateMap<UpdateProjectRequestDto, Project>();
         }
     }
 }

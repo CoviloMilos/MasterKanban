@@ -64,5 +64,17 @@ namespace KanbanManagement.Test.Unit.Controller
         
             return project;
         }
+
+        public async Task<ProjectResponseDto> UpdateProject(UpdateProjectRequestDto updateProjectRequestDto, string guid)
+        {
+            await Task.Delay(10);
+
+            ProjectResponseDto response = _projects.ElementAt(0);
+            response.Name = updateProjectRequestDto.Name;
+            response.Description = updateProjectRequestDto.Description;
+            response.CreatedBy = updateProjectRequestDto.CreatedBy;
+            
+            return response;
+        }
     }
 }

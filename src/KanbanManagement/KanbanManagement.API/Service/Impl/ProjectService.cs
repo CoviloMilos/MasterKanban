@@ -58,7 +58,7 @@ namespace KanbanManagement.API.Service.Impl
                 _projectRepository.Delete(project);
 
                 if (await _projectRepository.SaveAll()) 
-                    return new EntityDeletedSuccessfully(DomainConsts.ENTITY_PROJECT, $"Project with id: {guid} is deleted successfullty.", HttpStatusCode.OK);
+                    return new EntityDeletedSuccessfully(DomainConsts.ENTITY_PROJECT, $"{DomainConsts.ENTITY_PROJECT} with id: {guid} is deleted successfully.", HttpStatusCode.OK);
                 else 
                 {
                     _logger.LogError($"Something went wrong while trying to delete project with id: {guid}");
@@ -67,7 +67,7 @@ namespace KanbanManagement.API.Service.Impl
 
             }
             
-            throw new EntityNotFoundException($"Entity with id: {guid} not found.", DomainConsts.APPLICATION_NAME);
+            throw new EntityNotFoundException($"{DomainConsts.ENTITY_PROJECT} with id: {guid} not found.", DomainConsts.APPLICATION_NAME);
         }
 
         public async Task<IEnumerable<ProjectResponseDto>> RetrieveAll()
@@ -87,7 +87,27 @@ namespace KanbanManagement.API.Service.Impl
             if (project != null)
                 return _mapper.Map<ProjectByIdResponseDto>(project);
 
-            throw new EntityNotFoundException($"Entity with id: {guid} not found.", DomainConsts.APPLICATION_NAME);
+            throw new EntityNotFoundException($"{DomainConsts.ENTITY_PROJECT} with id: {guid} not found.", DomainConsts.APPLICATION_NAME);
+        }
+
+        public async Task<ProjectResponseDto> UpdateProject(UpdateProjectRequestDto updateProjectRequestDto, string guid)
+        {
+            var project = await _projectRepository.FindProjectById(Utils.checkGuidFormat(guid));
+
+            if (project != null) 
+            {
+                _mapper.Map(updateProjectRequestDto, project);
+                           
+                if (await _projectRepository.SaveAll()) 
+                    return _mapper.Map<ProjectResponseDto>(project);
+                else 
+                {
+                    _logger.LogError("Something went wront while trying to update project ...");
+                    throw new UnknownException("Something went wront while trying to update project.", DomainConsts.APPLICATION_NAME);
+                }
+            }
+
+            throw new EntityNotFoundException($"{DomainConsts.ENTITY_PROJECT} with id: {guid} not found.", DomainConsts.APPLICATION_NAME);
         }
     }
 }

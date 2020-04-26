@@ -12,5 +12,6 @@ namespace KanbanManagement.API.Service
         Task<IEnumerable<ProjectResponseDto>> RetrieveAll();
         Task<ProjectByIdResponseDto> RetrieveById(string guid);
         Task<EntityDeletedSuccessfully> DeleteById(string guid);
+        Task<ProjectResponseDto> UpdateProject(UpdateProjectRequestDto updateProjectRequestDto, string guid);
     }
 }
