@@ -7,6 +7,7 @@ using Common.ExceptionHandling.Exceptions;
 using Common.Logging;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Common.Dto;
 
 namespace Common.ExceptionHanding
 {
@@ -45,21 +46,20 @@ namespace Common.ExceptionHanding
         private async Task handleCustomExceptions(BaseException ex, HttpContext httpContext) 
         {
             if (ex.code == 0) {
-                    ex.code = HttpStatusCode.InternalServerError;
-                }
+                ex.code = HttpStatusCode.InternalServerError;
+            }
 
-            var response = JsonConvert.SerializeObject(new { 
-                messsage = ex.Message,
-                status = ex.code,
-                requested_uri = httpContext.Request.Path,
-                timestamp = DateTime.Now,
-                origin = ex.origin
-            });
+            var response = new QueueExceptionDto();
+            response.Message = ex.Message;
+            response.Status = ex.code.ToString();
+            response.RequestedUri = httpContext.Request.Path;
+            response.Timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm tt");
+            response.Origin = getOriginBasedOnContext(httpContext.Request.Path);
 
             httpContext.Response.ContentType = "application/json";
             httpContext.Response.StatusCode = (int) ex.code;
 
-            await httpContext.Response.WriteAsync(response);
+            await httpContext.Response.WriteAsync(response.SerializeModel());
 
             if (ex.code.Equals(HttpStatusCode.InternalServerError))
                 _manager.Publish(response);
@@ -67,18 +67,18 @@ namespace Common.ExceptionHanding
 
         private async Task handleAll(Exception ex, HttpContext httpContext) 
         {
-            var response = JsonConvert.SerializeObject(new { 
-                messsage = ex.Message,
-                status = HttpStatusCode.InternalServerError,
-                requested_uri = httpContext.Request.Path,
-                timestamp = DateTime.Now,
-                origin = getOriginBasedOnContext(httpContext.Request.Path)
-            });
+
+            var response = new QueueExceptionDto();
+            response.Message = ex.Message;
+            response.Status = HttpStatusCode.InternalServerError.ToString();
+            response.RequestedUri = httpContext.Request.Path;
+            response.Timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm tt");
+            response.Origin = getOriginBasedOnContext(httpContext.Request.Path);
 
             httpContext.Response.ContentType = "application/json";
             httpContext.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
 
-            await httpContext.Response.WriteAsync(response);
+            await httpContext.Response.WriteAsync(response.SerializeModel());
 
             _manager.Publish(response);
         }
