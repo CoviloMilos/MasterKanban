@@ -10,6 +10,6 @@
 - http://localhost:7000/hc - Heath Check to check connection to postgres
 - http://localhost:7000/hc-ui#/healthchecks - Health Check UI
 
-## Explore
+## Desc
 
 - This API is used to manage project resource.

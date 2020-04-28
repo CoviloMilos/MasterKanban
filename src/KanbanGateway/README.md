@@ -8,6 +8,6 @@
 - dotnet run
 - http://localhost:5000/api/project/
 
-## Explore
+## Desc
 
 - This API is used to route and rate limit rest calls to all applications.
