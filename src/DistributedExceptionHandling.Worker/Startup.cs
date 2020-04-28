@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using AutoMapper;
 using Common.Logging;
 using DistributedExceptionHandling.Worker.RabbitMq;
 using DistributedExceptionHandling.Worker.Repository;

@@ -1,0 +1,155 @@
+2020-04-28 03:08:22.2156 INFO Request starting HTTP/1.1 GET http://localhost:5000/api/project  
+2020-04-28 03:08:22.4042 INFO requestId: 0HLVB22IKFBI0:00000001, previousRequestId: no previous request id, message: No authentication needed for /api/project
+2020-04-28 03:08:22.4154 INFO requestId: 0HLVB22IKFBI0:00000001, previousRequestId: no previous request id, message: /project/ route does not require user to be authorised
+2020-04-28 03:08:22.5803 INFO requestId: 0HLVB22IKFBI0:00000001, previousRequestId: no previous request id, message: Request get:/api/project from ClientId client has been blocked, quota 1/1s exceeded by 2. Blocked by rule /api/project/, TraceIdentifier 0HLVB22IKFBI0:00000001.
+2020-04-28 03:08:22.6108 ERROR requestId: 0HLVB22IKFBI0:00000001, previousRequestId: no previous request id, message: Exception caught in global error handler, exception message: Headers are read-only, response has already started., exception stack:    at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.ReturnQuotaExceededResponse(HttpContext httpContext, RateLimitOptions option, String retryAfter)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Fire(DownstreamContext context, OcelotRequestDelegate next)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Multiplex(DownstreamContext context, ReRoute reRoute, OcelotRequestDelegate next)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(DownstreamContext context)
+   at KanbanGateway.API.Program.<>c.<<Main>b__0_4>d.MoveNext() in /home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanGateway/KanbanGateway.API/Program.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at Ocelot.Middleware.Pipeline.MapWhenMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(DownstreamContext context) RequestId: 0HLVB22IKFBI0:00000001, exception: System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.ReturnQuotaExceededResponse(HttpContext httpContext, RateLimitOptions option, String retryAfter)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Fire(DownstreamContext context, OcelotRequestDelegate next)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Multiplex(DownstreamContext context, ReRoute reRoute, OcelotRequestDelegate next)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(DownstreamContext context)
+   at KanbanGateway.API.Program.<>c.<<Main>b__0_4>d.MoveNext() in /home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanGateway/KanbanGateway.API/Program.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at Ocelot.Middleware.Pipeline.MapWhenMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(DownstreamContext context)
+2020-04-28 03:08:22.6143 INFO Request finished in 406.9704ms 200 application/json; charset=utf-8
+2020-04-28 03:08:23.9985 INFO Request starting HTTP/1.1 GET http://localhost:5000/api/project  
+2020-04-28 03:08:23.9985 INFO requestId: 0HLVB22IKFBI0:00000002, previousRequestId: no previous request id, message: No authentication needed for /api/project
+2020-04-28 03:08:23.9985 INFO requestId: 0HLVB22IKFBI0:00000002, previousRequestId: no previous request id, message: /project/ route does not require user to be authorised
+2020-04-28 03:08:24.0074 INFO requestId: 0HLVB22IKFBI0:00000002, previousRequestId: no previous request id, message: Request get:/api/project from ClientId client has been blocked, quota 1/1s exceeded by 2. Blocked by rule /api/project/, TraceIdentifier 0HLVB22IKFBI0:00000002.
+2020-04-28 03:08:24.0103 ERROR requestId: 0HLVB22IKFBI0:00000002, previousRequestId: no previous request id, message: Exception caught in global error handler, exception message: Headers are read-only, response has already started., exception stack:    at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.ReturnQuotaExceededResponse(HttpContext httpContext, RateLimitOptions option, String retryAfter)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Fire(DownstreamContext context, OcelotRequestDelegate next)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Multiplex(DownstreamContext context, ReRoute reRoute, OcelotRequestDelegate next)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(DownstreamContext context)
+   at KanbanGateway.API.Program.<>c.<<Main>b__0_4>d.MoveNext() in /home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanGateway/KanbanGateway.API/Program.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at Ocelot.Middleware.Pipeline.MapWhenMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(DownstreamContext context) RequestId: 0HLVB22IKFBI0:00000002, exception: System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.ReturnQuotaExceededResponse(HttpContext httpContext, RateLimitOptions option, String retryAfter)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Fire(DownstreamContext context, OcelotRequestDelegate next)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Multiplex(DownstreamContext context, ReRoute reRoute, OcelotRequestDelegate next)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(DownstreamContext context)
+   at KanbanGateway.API.Program.<>c.<<Main>b__0_4>d.MoveNext() in /home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanGateway/KanbanGateway.API/Program.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at Ocelot.Middleware.Pipeline.MapWhenMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(DownstreamContext context)
+2020-04-28 03:08:24.0121 INFO Request finished in 13.5208ms 200 application/json; charset=utf-8
+2020-04-28 03:08:24.8198 INFO Request starting HTTP/1.1 GET http://localhost:5000/api/project  
+2020-04-28 03:08:24.8209 INFO requestId: 0HLVB22IKFBI0:00000003, previousRequestId: no previous request id, message: Request get:/api/project from ClientId client has been blocked, quota 1/1s exceeded by 3. Blocked by rule /api/project/, TraceIdentifier 0HLVB22IKFBI0:00000003.
+2020-04-28 03:08:24.8278 ERROR requestId: 0HLVB22IKFBI0:00000003, previousRequestId: no previous request id, message: Exception caught in global error handler, exception message: Object reference not set to an instance of an object., exception stack:    at Ocelot.Responder.HttpContextResponder.SetResponseOnHttpContext(HttpContext context, DownstreamResponse response)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(DownstreamContext context)
+   at KanbanGateway.API.Program.<>c.<<Main>b__0_4>d.MoveNext() in /home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanGateway/KanbanGateway.API/Program.cs:line 61
+--- End of stack trace from previous location where exception was thrown ---
+   at Ocelot.Middleware.Pipeline.MapWhenMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(DownstreamContext context) RequestId: 0HLVB22IKFBI0:00000003, exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at Ocelot.Responder.HttpContextResponder.SetResponseOnHttpContext(HttpContext context, DownstreamResponse response)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(DownstreamContext context)
+   at KanbanGateway.API.Program.<>c.<<Main>b__0_4>d.MoveNext() in /home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanGateway/KanbanGateway.API/Program.cs:line 61
+--- End of stack trace from previous location where exception was thrown ---
+   at Ocelot.Middleware.Pipeline.MapWhenMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(DownstreamContext context)
+2020-04-28 03:08:24.8325 INFO Request finished in 12.6022ms 429 
+2020-04-28 03:08:25.1944 INFO Request starting HTTP/1.1 GET http://localhost:5000/api/project  
+2020-04-28 03:08:25.1944 INFO requestId: 0HLVB22IKFBI0:00000004, previousRequestId: no previous request id, message: No authentication needed for /api/project
+2020-04-28 03:08:25.1944 INFO requestId: 0HLVB22IKFBI0:00000004, previousRequestId: no previous request id, message: /project/ route does not require user to be authorised
+2020-04-28 03:08:25.2062 INFO requestId: 0HLVB22IKFBI0:00000004, previousRequestId: no previous request id, message: Request get:/api/project from ClientId client has been blocked, quota 1/1s exceeded by 2. Blocked by rule /api/project/, TraceIdentifier 0HLVB22IKFBI0:00000004.
+2020-04-28 03:08:25.2062 ERROR requestId: 0HLVB22IKFBI0:00000004, previousRequestId: no previous request id, message: Exception caught in global error handler, exception message: Headers are read-only, response has already started., exception stack:    at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.ReturnQuotaExceededResponse(HttpContext httpContext, RateLimitOptions option, String retryAfter)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Fire(DownstreamContext context, OcelotRequestDelegate next)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Multiplex(DownstreamContext context, ReRoute reRoute, OcelotRequestDelegate next)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(DownstreamContext context)
+   at KanbanGateway.API.Program.<>c.<<Main>b__0_4>d.MoveNext() in /home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanGateway/KanbanGateway.API/Program.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at Ocelot.Middleware.Pipeline.MapWhenMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(DownstreamContext context) RequestId: 0HLVB22IKFBI0:00000004, exception: System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.ReturnQuotaExceededResponse(HttpContext httpContext, RateLimitOptions option, String retryAfter)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Fire(DownstreamContext context, OcelotRequestDelegate next)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Multiplex(DownstreamContext context, ReRoute reRoute, OcelotRequestDelegate next)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(DownstreamContext context)
+   at KanbanGateway.API.Program.<>c.<<Main>b__0_4>d.MoveNext() in /home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanGateway/KanbanGateway.API/Program.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at Ocelot.Middleware.Pipeline.MapWhenMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(DownstreamContext context)
+2020-04-28 03:08:25.2080 INFO Request finished in 13.6742ms 200 application/json; charset=utf-8
+2020-04-28 03:08:26.3822 INFO Request starting HTTP/1.1 GET http://localhost:5000/api/project  
+2020-04-28 03:08:26.3822 INFO requestId: 0HLVB22IKFBI0:00000005, previousRequestId: no previous request id, message: No authentication needed for /api/project
+2020-04-28 03:08:26.3822 INFO requestId: 0HLVB22IKFBI0:00000005, previousRequestId: no previous request id, message: /project/ route does not require user to be authorised
+2020-04-28 03:08:26.3874 INFO requestId: 0HLVB22IKFBI0:00000005, previousRequestId: no previous request id, message: Request get:/api/project from ClientId client has been blocked, quota 1/1s exceeded by 2. Blocked by rule /api/project/, TraceIdentifier 0HLVB22IKFBI0:00000005.
+2020-04-28 03:08:26.3890 ERROR requestId: 0HLVB22IKFBI0:00000005, previousRequestId: no previous request id, message: Exception caught in global error handler, exception message: Headers are read-only, response has already started., exception stack:    at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.ReturnQuotaExceededResponse(HttpContext httpContext, RateLimitOptions option, String retryAfter)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Fire(DownstreamContext context, OcelotRequestDelegate next)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Multiplex(DownstreamContext context, ReRoute reRoute, OcelotRequestDelegate next)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(DownstreamContext context)
+   at KanbanGateway.API.Program.<>c.<<Main>b__0_4>d.MoveNext() in /home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanGateway/KanbanGateway.API/Program.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at Ocelot.Middleware.Pipeline.MapWhenMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(DownstreamContext context) RequestId: 0HLVB22IKFBI0:00000005, exception: System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.ReturnQuotaExceededResponse(HttpContext httpContext, RateLimitOptions option, String retryAfter)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Fire(DownstreamContext context, OcelotRequestDelegate next)
+   at Ocelot.Middleware.Multiplexer.Multiplexer.Multiplex(DownstreamContext context, ReRoute reRoute, OcelotRequestDelegate next)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(DownstreamContext context)
+   at KanbanGateway.API.Program.<>c.<<Main>b__0_4>d.MoveNext() in /home/covilo/workspace/projects/diplomski/masterkanban/src/KanbanGateway/KanbanGateway.API/Program.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at Ocelot.Middleware.Pipeline.MapWhenMiddleware.Invoke(DownstreamContext context)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(DownstreamContext context)
+2020-04-28 03:08:26.3890 INFO Request finished in 7.0725ms 200 application/json; charset=utf-8

@@ -1,27 +1,25 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
-using System;
+﻿using System;
 using System.IO;
-using KanbanManagement.API.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NLog;
-using AutoMapper;
 using KanbanManagement.API.Repository.Impl;
 using KanbanManagement.API.Service;
 using KanbanManagement.API.Service.Impl;
-using Microsoft.OpenApi.Models;
-using Common.ExceptionHanding;
-using Common.Logging;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using KanbanManagement.API.Repository;
+using KanbanManagement.API.Shared.HealthCheck;
 using HealthChecks.UI.Client;
 using HealthChecks.UI.Configuration;
-using KanbanManagement.API.Shared.HealthCheck;
+using Common.ExceptionHanding;
+using Common.Logging;
+using AutoMapper;
+using NLog;
+using Common.Initializers;
 using Common.DistribudetExcetionHandling;
-using KanbanManagement.API.Shared;
 
 namespace KanbanManagement.API
 {
@@ -41,9 +39,19 @@ namespace KanbanManagement.API
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(options => 
-                {   //Ignore nested json
+                { 
                     options.SerializerSettings.ReferenceLoopHandling = 
                         Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                });
+
+            services.AddCors(options =>
+                {
+                    options.AddPolicy("AnyOrigin", builder =>
+                    {
+                        builder
+                            .AllowAnyOrigin()
+                            .AllowAnyMethod();
+                    });
                 });
 
             services.AddRabbitMq(Configuration);
@@ -53,24 +61,16 @@ namespace KanbanManagement.API
                     opt.UseNpgsql(Configuration.GetConnectionString("postgres-connection"));
                 });
 
-            services.AddSwaggerGen(c =>
-                {
-                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "KanbanManagement", Version = "v1" });
-                });
-
-            // HealthCheck configuration
             services.AddHealthChecks()
-                .AddRabbitMQ(KanbanManagement.API.Shared.Utils
-                                .extractRabbitMqConfigDataToString(Configuration.GetSection("rabbitmq-connection").Get<RabbitMqOptions>()), 
-                             "Kanban management RabbitMq HC")
+                .AddRabbitMQ(KanbanManagement.API.Shared.Utils.extractRabbitMqConfigDataToString(Configuration.GetSection("rabbitmq-connection").Get<RabbitMqOptions>()), "Kanban management RabbitMq HC")
                 .AddCheck("Kanban management Postgresql HC", new NpgsqlHealthCheck(Configuration.GetConnectionString("postgres-connection")));
             services.AddHealthChecksUI();
 
-            // AutoMapper configuration
+            services.AddSwaggerUI(Configuration);
+
             Mapper.Reset();
             services.AddAutoMapper();
 
-            // Services configuration
             services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<IAssignmentRepository, AssignmentRepository>();
@@ -109,10 +109,10 @@ namespace KanbanManagement.API
             app.UseSwagger();
             app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "KanbanManagement");
+                    c.SwaggerEndpoint($"/swagger/{Configuration["Service:Version"]}/swagger.json", "KanbanManagement");
                 });
-
-            app.UseRequestInvokerMiddleware();
+            app.UseCors("AnyOrigin");
+            app.UseExcetionHandling();
             app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseMvc();

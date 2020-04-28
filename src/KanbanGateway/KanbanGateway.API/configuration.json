@@ -1,0 +1,87 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/project/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+          {
+              "Host": "localhost",
+              "Port": 7000
+          }
+      ],
+      "UpstreamPathTemplate": "/api/project/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "LoadBalancer": "RoundRobin",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/project/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+          {
+              "Host": "localhost",
+              "Port": 7000
+          }
+      ],
+      "UpstreamPathTemplate": "/api/project/{catchAll}",
+      "UpstreamHttpMethod": [ "Get", "POST", "PUT", "DELETE" ],
+      "LoadBalancer": "RoundRobin",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1s",
+        "PeriodTimespan": 1,
+        "Limit": 10
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/assignment/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+          {
+              "Host": "localhost",
+              "Port": 7000
+          }
+      ],
+      "UpstreamPathTemplate": "/api/assignment/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "LoadBalancer": "RoundRobin",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1s",
+        "PeriodTimespan": 1,
+        "Limit": 10
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/assignment/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+          {
+              "Host": "localhost",
+              "Port": 7000
+          }
+      ],
+      "UpstreamPathTemplate": "/api/assignment/{catchAll}",
+      "UpstreamHttpMethod": [ "Get", "POST", "PUT", "DELETE" ],
+      "LoadBalancer": "RoundRobin",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1s",
+        "PeriodTimespan": 1,
+        "Limit": 10
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000"
+  }
+}

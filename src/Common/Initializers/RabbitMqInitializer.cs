@@ -1,9 +1,10 @@
+using Common.DistribudetExcetionHandling;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ObjectPool;
 using RabbitMQ.Client;
 
-namespace Common.DistribudetExcetionHandling
+namespace Common.Initializers
 {
     public static class RabbitMqInitializer
     {

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "359b25d3326abdf96478d910fd3f596b83f06a42"
+    "signature": "feff5f6df133238501257b59c7d858ec9274d52b"
   },
   "compilationOptions": {
     "defines": [
@@ -131,6 +131,23 @@
         },
         "compile": {
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "FluentValidation/7.6.104": {
+        "dependencies": {
+          "System.Collections.Concurrent": "4.3.0",
+          "System.ComponentModel.Annotations": "4.5.0",
+          "System.ComponentModel.Primitives": "4.3.0",
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.6.104.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
@@ -363,6 +380,24 @@
           "lib/netstandard1.3/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll": {}
         }
       },
+      "Ocelot/12.0.1": {
+        "dependencies": {
+          "FluentValidation": "7.6.104",
+          "Microsoft.AspNetCore": "2.2.0",
+          "Microsoft.AspNetCore.MiddlewareAnalysis": "2.2.0",
+          "Microsoft.AspNetCore.Mvc": "2.2.0",
+          "Microsoft.Extensions.DiagnosticAdapter": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ocelot.dll": {
+            "assemblyVersion": "12.0.1.0",
+            "fileVersion": "12.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Ocelot.dll": {}
+        }
+      },
       "RabbitMQ.Client/6.0.0-rc1": {
         "runtime": {
           "lib/netstandard2.0/RabbitMQ.Client.dll": {
@@ -585,6 +620,18 @@
         }
       },
       "System.Collections.Immutable/1.5.0": {},
+      "System.ComponentModel/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.ComponentModel.Primitives/4.3.0": {
+        "dependencies": {
+          "System.ComponentModel": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
       "System.Configuration.ConfigurationManager/4.5.0": {
         "dependencies": {
           "System.Security.Cryptography.ProtectedData": "4.5.0",
@@ -732,6 +779,7 @@
           "Newtonsoft.Json": "12.0.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.4",
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.1",
+          "Ocelot": "12.0.1",
           "RabbitMQ.Client": "6.0.0-rc1",
           "Swashbuckle.AspNetCore": "5.0.0-rc2",
           "System.Text.Json": "4.7.0",
@@ -3873,6 +3921,13 @@
       "path": "automapper.extensions.microsoft.dependencyinjection/4.0.1",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.4.0.1.nupkg.sha512"
     },
+    "FluentValidation/7.6.104": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-amvsYOH/wHosZ/sUPj6w+JN56e49+mNNewfw+tVRpaMbBaAVOnP6DvFzVgD0IxUpMrwl1D9CGyGNO1gZro2XBw==",
+      "path": "fluentvalidation/7.6.104",
+      "hashPath": "fluentvalidation.7.6.104.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -3992,6 +4047,13 @@
       "path": "npgsql.entityframeworkcore.postgresql.design/1.1.1",
       "hashPath": "npgsql.entityframeworkcore.postgresql.design.1.1.1.nupkg.sha512"
     },
+    "Ocelot/12.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hNXmVbPrWiHKRatYWsvkGIPASRA0r7087fDYBe85g2mDiJc3D+31A5w3Ogu11Vdobl3ejlFDT3ekyZ2IKDUwow==",
+      "path": "ocelot/12.0.1",
+      "hashPath": "ocelot.12.0.1.nupkg.sha512"
+    },
     "RabbitMQ.Client/6.0.0-rc1": {
       "type": "package",
       "serviceable": true,
@@ -4082,6 +4144,20 @@
       "sha512": "sha512-EXKiDFsChZW0RjrZ4FYHu9aW6+P4MCgEDCklsVseRfhoO0F+dXeMSsMRAlVXIo06kGJ/zv+2w1a2uc2+kxxSaQ==",
       "path": "system.collections.immutable/1.5.0",
       "hashPath": "system.collections.immutable.1.5.0.nupkg.sha512"
+    },
+    "System.ComponentModel/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw==",
+      "path": "system.componentmodel/4.3.0",
+      "hashPath": "system.componentmodel.4.3.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Primitives/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "path": "system.componentmodel.primitives/4.3.0",
+      "hashPath": "system.componentmodel.primitives.4.3.0.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/4.5.0": {
       "type": "package",
