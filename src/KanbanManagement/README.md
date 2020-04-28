@@ -6,9 +6,9 @@
 
 ## Explore
 - dotnet run
-- http://localhost:5000/swagger/index.html - Explore endpoints using swagger
-- http://localhost:5000/hc - Heath Check to check connection to postgres
-- http://localhost:5000/hc-ui#/healthchecks - Health Check UI
+- http://localhost:7000/swagger/index.html - Explore endpoints using swagger
+- http://localhost:7000/hc - Heath Check to check connection to postgres
+- http://localhost:7000/hc-ui#/healthchecks - Health Check UI
 
 ## Explore
 
