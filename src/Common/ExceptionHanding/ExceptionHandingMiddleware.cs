@@ -54,7 +54,7 @@ namespace Common.ExceptionHanding
             response.Status = ex.code.ToString();
             response.RequestedUri = httpContext.Request.Path;
             response.Timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm tt");
-            response.Origin = getOriginBasedOnContext(httpContext.Request.Path);
+            response.Origin = ex.origin;
 
             httpContext.Response.ContentType = "application/json";
             httpContext.Response.StatusCode = (int) ex.code;

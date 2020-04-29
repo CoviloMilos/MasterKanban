@@ -89,3 +89,10 @@
 2020-04-28 03:08:24.0023 INFO Retrieving all existing projects from database ...
 2020-04-28 03:08:25.1961 INFO Retrieving all existing projects from database ...
 2020-04-28 03:08:26.3835 INFO Retrieving all existing projects from database ...
+2020-04-28 23:27:34.4661 INFO Creating connection to RabbitMQ
+2020-04-28 23:28:35.9691 INFO Creating connection to RabbitMQ
+2020-04-28 23:28:56.9786 INFO Publishing message to RabbitMQ
+2020-04-28 23:30:07.4816 INFO Creating connection to RabbitMQ
+2020-04-28 23:30:27.5921 INFO Publishing message to RabbitMQ
+2020-04-28 23:31:21.7645 INFO Publishing message to RabbitMQ
+2020-04-28 23:32:45.0133 INFO Publishing message to RabbitMQ

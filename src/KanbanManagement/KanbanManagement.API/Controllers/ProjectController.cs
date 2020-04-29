@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Common.ExceptionHanding.Exceptions;
 using KanbanManagement.API.Dto.Request;
 using KanbanManagement.API.Service;
 using Microsoft.AspNetCore.Mvc;

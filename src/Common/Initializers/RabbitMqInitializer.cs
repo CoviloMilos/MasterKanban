@@ -13,7 +13,7 @@ namespace Common.Initializers
             var section = configuration.GetSection("rabbitmq-connection");
             services.Configure<RabbitMqOptions>(section);
             
-            var sectionExchange = configuration.GetSection("rabbitmq-configuration");
+            var sectionExchange = configuration.GetSection("rabbitmq-exchange-config");
             services.Configure<RabbitMqExchangeOptions>(sectionExchange);
 
             services.AddSingleton<ObjectPoolProvider, DefaultObjectPoolProvider>();

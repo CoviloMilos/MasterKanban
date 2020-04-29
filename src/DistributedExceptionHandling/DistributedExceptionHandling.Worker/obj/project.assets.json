@@ -13430,8 +13430,8 @@
     },
     "Common/1.0.0": {
       "type": "project",
-      "path": "../Common/Common.csproj",
-      "msbuildProject": "../Common/Common.csproj"
+      "path": "../../Common/Common.csproj",
+      "msbuildProject": "../../Common/Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13449,11 +13449,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/covilo/workspace/projects/diplomski/masterkanban/src/DistributedExceptionHandling.Worker/DistributedExceptionHandling.Worker.csproj",
+      "projectUniqueName": "/home/covilo/workspace/projects/diplomski/masterkanban/src/DistributedExceptionHandling/DistributedExceptionHandling.Worker/DistributedExceptionHandling.Worker.csproj",
       "projectName": "DistributedExceptionHandling.Worker",
-      "projectPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/DistributedExceptionHandling.Worker/DistributedExceptionHandling.Worker.csproj",
+      "projectPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/DistributedExceptionHandling/DistributedExceptionHandling.Worker/DistributedExceptionHandling.Worker.csproj",
       "packagesPath": "/home/covilo/.nuget/packages/",
-      "outputPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/DistributedExceptionHandling.Worker/obj/",
+      "outputPath": "/home/covilo/workspace/projects/diplomski/masterkanban/src/DistributedExceptionHandling/DistributedExceptionHandling.Worker/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

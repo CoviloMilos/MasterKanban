@@ -20,16 +20,6 @@ namespace KanbanGateway.API
 {
     public class Program
     {
-        /*public static void Main(string[] args)
-        {
-            CreateWebHostBuilder(args).Build().Run();
-        }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((host, config) => { config.AddJsonFile("configuration.json"); })
-                .UseStartup<Startup>();*/
-
         public static void Main(string[] args) {
             new WebHostBuilder()
                .UseKestrel()

@@ -153,3 +153,5 @@
    at Ocelot.Middleware.Pipeline.MapWhenMiddleware.Invoke(DownstreamContext context)
    at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(DownstreamContext context)
 2020-04-28 03:08:26.3890 INFO Request finished in 7.0725ms 200 application/json; charset=utf-8
+2020-04-28 23:38:57.9644 FATAL Application startup exception
+2020-04-28 23:40:31.6330 FATAL Application startup exception
